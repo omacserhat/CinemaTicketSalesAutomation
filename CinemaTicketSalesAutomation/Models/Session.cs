@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CinemaTicketSalesAutomation.Models
 {
-    public abstract class BaseClass
+    public class Session
     {
-        public string movieName { get; set; }
+        public string date { get; set; }
+        public string time { get; set; }
+        public List<Chair> chair { get; set; }
     }
 }
