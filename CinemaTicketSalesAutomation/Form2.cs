@@ -31,7 +31,7 @@ namespace CinemaTicketSalesAutomation
             selectedSession = selectedMovie.sessions.Find(x => x.date == _date && x.time == _time);
             lblTime.Text = $"{_date} - {_time}";
             lblMinute.Text = selectedMovie.minute;
-            lblPrice.Text = selectedMovie.price.ToString();
+            lblPrice.Text = selectedMovie.price.ToString() + " TL";
             pbSelectedPicture.Image = Image.FromFile(selectedMovie.picturePath);
             lblCategory.Text = selectedMovie.category.ToString();
 

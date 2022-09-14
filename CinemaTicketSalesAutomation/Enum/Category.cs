@@ -8,10 +8,10 @@ namespace CinemaTicketSalesAutomation.Enum
 {
     public enum Category
     {
-        bilim_kurgu,
-        gerilim,
-        macera,
-        komedi,
-        fantastik
+        BilimKurgu,
+        Gerilim,
+        Macera,
+        Komedi,
+        Fantastik
     }
 }

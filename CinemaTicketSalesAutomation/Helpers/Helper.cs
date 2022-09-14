@@ -17,7 +17,7 @@ namespace CinemaTicketSalesAutomation.Helpers
                 new Movie()
                 {
                     movieName = "Yıldızlararası",
-                    category = Enum.Category.bilim_kurgu,
+                    category = Enum.Category.BilimKurgu,
                     minute = "2 Saat 49 Dakika",
                     price = 50,
                     picturePath = basePath + "yildizlararasi.jpg"
@@ -25,7 +25,7 @@ namespace CinemaTicketSalesAutomation.Helpers
                 new Movie()
                 {
                     movieName = "Hızlı ve Öfkeli 3",
-                    category = Enum.Category.macera,
+                    category = Enum.Category.Macera,
                     minute = "2 Saat 20 Dakika",
                     price = 60,
                     picturePath = basePath + "hizliveofkeli3.jpeg"
@@ -33,7 +33,7 @@ namespace CinemaTicketSalesAutomation.Helpers
                 new Movie()
                 {
                     movieName = "Nefesini Tut 2",
-                    category = Enum.Category.gerilim,
+                    category = Enum.Category.Gerilim,
                     minute = "2 Saat 35 Dakika",
                     price = 45,
                     picturePath = basePath + "nefesini_tut2.jpg"
@@ -41,7 +41,7 @@ namespace CinemaTicketSalesAutomation.Helpers
                 new Movie()
                 {
                     movieName = "Üç Aptal",
-                    category = Enum.Category.komedi,
+                    category = Enum.Category.Komedi,
                     minute = "3 Saat 15 Dakika",
                     price = 40,
                     picturePath = basePath + "uc_aptal.jpg"
@@ -49,7 +49,7 @@ namespace CinemaTicketSalesAutomation.Helpers
                 new Movie()
                 {
                      movieName = "Örümcek Adam",
-                    category = Enum.Category.fantastik,
+                    category = Enum.Category.Fantastik,
                     minute = "2 Saat 30 Dakika",
                     price = 50,
                     picturePath = basePath + "orumcek_adam.jpg"
@@ -57,7 +57,7 @@ namespace CinemaTicketSalesAutomation.Helpers
                 new Movie()
                 {
                      movieName = "Geleceğe Dönüş",
-                    category = Enum.Category.fantastik,
+                    category = Enum.Category.Fantastik,
                     minute = "1 Saat 55 Dakika",
                     price = 30,
                     picturePath = basePath + "gelecege_donus.jpg"
