@@ -28,7 +28,7 @@ namespace CinemaTicketSalesAutomation.Helpers
                     category = Enum.Category.macera,
                     minute = "2 Saat 20 Dakika",
                     price = 60,
-                    picturePath = basePath + "hizliveofkeli3.jpg"
+                    picturePath = basePath + "hizliveofkeli3.jpeg"
                 },
                 new Movie()
                 {
