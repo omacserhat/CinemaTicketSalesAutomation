@@ -41,6 +41,21 @@ namespace CinemaTicketSalesAutomation
                 picture.Image = Image.FromFile(movies[i].picturePath);
                 picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Controls.Add(picture);
+
+                int buttonX = x;
+                int buttonY = picture.Bottom + 10;
+                for (int index = 0; index < 3; index++)
+                {
+                    Button button = new Button();
+                    button.Text = movies[i].sessions[index].time;
+                    button.Location = new Point(buttonX, buttonY);
+                    button.Size = buttonSize;
+                    button.Tag = i;
+                    button.Click += new EventHandler(button_Click);
+                    this.Controls.Add(button);
+                    buttonX += 100;
+                }
+
                 if (1200 > x + xIncrement + picture.Width)
                 {
                     x += xIncrement;
@@ -51,6 +66,11 @@ namespace CinemaTicketSalesAutomation
                     y += yIncrement;
                 }
             }
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
