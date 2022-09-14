@@ -19,10 +19,16 @@ namespace CinemaTicketSalesAutomation
             InitializeComponent();
         }
         List<Movie> movies;
+        DateTime currentDate = DateTime.Now;
+        DateTime useDate;
+        Form2 form2;
         private void Form1_Load(object sender, EventArgs e)
         {
+            useDate = currentDate;
+            lblDate.Text = useDate.ToShortDateString();
             movies = Helper.CreateMovies();
             ListControls();
+            form2 = new Form2(movies,this);
         }
 
         private void ListControls()
@@ -70,7 +76,13 @@ namespace CinemaTicketSalesAutomation
 
         private void button_Click(object sender, EventArgs e)
         {
-
+            Button button = sender as Button;
+            int movieIndex = Convert.ToInt32(button.Tag);
+            string sessionTime = button.Text;
+            string sessionDate = lblDate.Text;
+            this.Hide();
+            form2.Show();
+            form2.ListDetail(movieIndex,sessionTime,sessionDate);
         }
     }
 }
