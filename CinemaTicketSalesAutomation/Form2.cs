@@ -67,5 +67,23 @@ namespace CinemaTicketSalesAutomation
             }
 
         }
+        List<Chair> chairs = new List<Chair>();
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            string row = button.Tag.ToString();
+            string number = button.Text;
+            Chair chair = selectedSession.chairs.Find(c => c.row == row && c.number == number);
+            if (button.BackColor.Name != "Blue")
+            {
+                chairs.Add(chair);
+                button.BackColor = Color.Blue;
+            }
+            else
+            {
+                chairs.Remove(chair);
+                button.BackColor = Color.LightGreen;
+            }
+        }
     }
 }
