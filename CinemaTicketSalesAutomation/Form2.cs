@@ -34,6 +34,37 @@ namespace CinemaTicketSalesAutomation
             lblPrice.Text = selectedMovie.price.ToString() + " TL";
             pbSelectedPicture.Image = Image.FromFile(selectedMovie.picturePath);
             lblCategory.Text = selectedMovie.category.ToString();
+            CheckChairStatus();
+
+        }
+
+        private void CheckChairStatus()
+        {
+            foreach (Control item in grbChairs.Controls)
+            {
+                if (item is Button)
+                {
+                    string row = item.Tag.ToString();
+                    string number = item.Text;
+                    item.Enabled = true;
+                    foreach (Chair chair in selectedSession.chairs)
+                    {
+                        if (chair.row == row && chair.number == number)
+                        {
+                            if (chair.status)
+                            {
+                                item.BackColor = Color.DarkRed;
+                                item.Enabled = false;
+                            }
+                            else
+                            {
+                                item.BackColor = Color.LightGreen;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
 
         }
     }
