@@ -80,9 +80,36 @@ namespace CinemaTicketSalesAutomation
             int movieIndex = Convert.ToInt32(button.Tag);
             string sessionTime = button.Text;
             string sessionDate = lblDate.Text;
+            if (DateTime.Parse($"{sessionDate} {sessionTime}" ) < DateTime.Now)
+            {
+                MessageBox.Show("Seçilen seansı kaçırdınız. Başka seans seçiniz.");
+                return;
+            }
             this.Hide();
             form2.Show();
             form2.ListDetail(movieIndex,sessionTime,sessionDate);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            useDate = useDate.AddDays(1);
+            lblDate.Text = useDate.ToShortDateString();
+            btnPrevious.Enabled = true;
+            if (currentDate.AddDays(2) == useDate)
+            {
+                btnNext.Enabled = false;
+            }
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            useDate = useDate.AddDays(-1);
+            lblDate.Text = useDate.ToShortDateString();
+            btnNext.Enabled = true;
+            if (currentDate == useDate)
+            {
+                btnPrevious.Enabled = false;
+            }
         }
     }
 }
