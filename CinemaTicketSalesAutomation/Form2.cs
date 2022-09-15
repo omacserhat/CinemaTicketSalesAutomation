@@ -85,5 +85,58 @@ namespace CinemaTicketSalesAutomation
                 button.BackColor = Color.LightGreen;
             }
         }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            if (chairs.Count == 0)
+            {
+                MessageBox.Show("Lütfen koltuk seçiniz.");
+                return;
+            }
+            Sales sales = new Sales();
+            sales.movieName = selectedMovie.movieName;
+            sales.count = chairs.Count;
+            sales.sessionTime = $"{selectedSession.date} - {selectedSession.time}";
+            sales.totalPrice = CalculatedPrice();
+            MessageBox.Show(sales.ToString());
+
+            foreach (Chair chair in chairs)
+            {
+                chair.status = true;
+            }
+
+            ChangePage();
+        }
+
+        private void ChangePage()
+        {
+            rbSmall.Checked = rbMedium.Checked = rbLarge.Checked = false;
+            chairs.Clear();
+            this.Hide();
+            form1.Show();
+        }
+
+        private decimal CalculatedPrice()
+        {
+            decimal price = selectedMovie.price * chairs.Count;
+            if (rbSmall.Checked)
+            {
+                price += 3;
+            }
+            else if(rbMedium.Checked)
+            {
+                price += 6;
+            }
+            else if (rbLarge.Checked)
+            {
+                price += 9;
+            }
+            return price;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ChangePage();
+        }
     }
 }

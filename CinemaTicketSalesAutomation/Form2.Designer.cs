@@ -550,6 +550,7 @@
             this.btnBuy.TabIndex = 5;
             this.btnBuy.Text = "Satın Al";
             this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // btnCancel
             // 
@@ -559,6 +560,7 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "İptal Et";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Form2
             // 
